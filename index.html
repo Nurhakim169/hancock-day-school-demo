@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hancock Day School Private Tour</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#85c198",
+                        "secondary-container": "#f8e382",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-primary-fixed-variant": "#145131",
+                        "on-primary-fixed": "#00210f",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-variant": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1c19",
+                        "primary-fixed": "#b3f1c5",
+                        "outline": "#707971",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#00381d",
+                        "on-secondary-fixed": "#211b00",
+                        "on-secondary-container": "#73640e",
+                        "tertiary-fixed-dim": "#ccc6bc",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#49463e",
+                        "surface-container-high": "#eae8e3",
+                        "primary-container": "#135030",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#dac769",
+                        "background": "#fbf9f4",
+                        "inverse-primary": "#97d4aa",
+                        "primary-fixed-dim": "#97d4aa",
+                        "on-secondary-fixed-variant": "#524600",
+                        "tertiary-fixed": "#e8e2d7",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6d5e06",
+                        "surface-container": "#f0eee9",
+                        "surface": "#fbf9f4",
+                        "surface-dim": "#dbdad5",
+                        "on-surface": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1e1b15",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c0c9bf",
+                        "inverse-surface": "#30312e",
+                        "on-surface-variant": "#404942",
+                        "surface-bright": "#fbf9f4",
+                        "surface-tint": "#306947",
+                        "on-tertiary-container": "#b9b4aa",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-tertiary-fixed-variant": "#4a463f",
+                        "secondary-fixed": "#f8e382",
+                        "tertiary": "#333029",
+                        "hancock-green": "#135030",
+                        "hancock-gold": "#C6B358"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "section-gap-mobile": "64px",
+                        "base": "8px",
+                        "section-gap-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Work Sans"],
+                        "headline-emphasis": ["Playfair Display"],
+                        "body-lg": ["Work Sans"],
+                        "button": ["Work Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-emphasis": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        @media (min-width: 768px) {
+            .hero-parallax-bg {
+                background-attachment: fixed;
+            }
+        }
+    </style>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased scroll-smooth">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
+
+        // --- Components ---
+
+        const Header = () => {
+            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+            return (
+                <header className="bg-background border-b border-outline-variant/30 sticky top-0 z-50">
+                    <div className="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
+                      <Link to="/" className="flex items-center">
+    <img
+        src="https://res.cloudinary.com/dn77vugbq/image/upload/q_auto/f_auto/v1781800379/logo_kswbne.webp"
+        alt="Hancock Day School"
+        className="h-24 w-auto"
+    />
+</Link>
+                      <nav className="hidden md:flex gap-8 items-center font-label-caps text-label-caps">
+    <Link className="text-on-surface-variant border-b-2 border-transparent pb-1 hover:text-primary hover:border-primary transition-all duration-200" to="/">Home</Link>
+    <Link className="text-on-surface-variant border-b-2 border-transparent pb-1 hover:text-primary hover:border-primary transition-all duration-200" to="/mobile-view">Visit Hancock</Link>
+    <a className="text-on-surface-variant border-b-2 border-transparent pb-1 hover:text-primary hover:border-primary transition-all duration-200" href="#">Admissions</a>
+    <a className="text-on-surface-variant border-b-2 border-transparent pb-1 hover:text-primary hover:border-primary transition-all duration-200" href="#">Campus Life</a>
+</nav>
+                        <a className="hidden md:inline-flex bg-primary text-on-primary font-button text-button py-3 px-6 rounded hover:bg-primary-container transition-colors items-center gap-2" href="#tour-form">
+                            Schedule a Private Tour
+                        </a>
+                        <button className="md:hidden text-primary" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                            <span className="material-symbols-outlined">{mobileMenuOpen ? 'close' : 'menu'}</span>
+                        </button>
+                    </div>
+                    {mobileMenuOpen && (
+                        <div className="md:hidden bg-surface border-b border-outline-variant/30 py-4 px-gutter flex flex-col gap-4 font-label-caps text-label-caps">
+                            <Link className="text-on-surface-variant hover:text-primary transition-colors duration-200" to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                            <Link className="text-on-surface-variant hover:text-primary transition-colors duration-200" to="/mobile-view" onClick={() => setMobileMenuOpen(false)}>Mobile View</Link>
+                        </div>
+                    )}
+                </header>
+            );
+        };
+
+     const Footer = () => (
+    <footer className="relative bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/30 overflow-hidden">
+        <div className="relative z-10 flex flex-col items-center justify-center w-full pt-section-gap-desktop pb-[22vw] md:pb-[20vw] lg:pb-[18vw] px-gutter max-w-container-max mx-auto">
+            <div className="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-8 flex items-center gap-2">
+                <Link to="/" className="flex items-center">
+                    <img
+                        src="https://res.cloudinary.com/dn77vugbq/image/upload/q_auto/f_auto/v1781800379/logo_kswbne.webp"
+                        alt="Hancock Day School"
+                        className="h-24 w-auto"
+                    />
+                </Link>
+            </div>
+
+            <nav className="flex flex-wrap justify-center gap-6 mb-8 font-label-caps text-label-caps">
+                <a className="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">
+                    Privacy Policy
+                </a>
+                <a className="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">
+                    Contact Us
+                </a>
+                <a className="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">
+                    Careers
+                </a>
+                <a className="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">
+                    Portal
+                </a>
+            </nav>
+
+            <div className="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant text-center">
+                © 2026 Hancock Day School. All Rights Reserved.
+            </div>
+        </div>
+
+        <img
+            src="https://res.cloudinary.com/dn77vugbq/image/upload/q_auto/f_auto/v1781802903/footer_BG_upebmg.webp"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 left-0 z-0 w-full h-auto object-contain object-bottom"
+        />
+    </footer>
+);
+
+        const FaqAccordion = ({ items }) => {
+            const [openIndex, setOpenIndex] = useState(null);
+
+            const toggle = (index) => {
+                if (openIndex === index) {
+                    setOpenIndex(null);
+                } else {
+                    setOpenIndex(index);
+                }
+            };
+
+            return (
+                <div className="space-y-4">
+                    {items.map((item, index) => (
+                        <div key={index} className="border-b border-outline-variant/30 pb-4">
+                            <button 
+                                className="w-full flex justify-between items-center text-left font-headline-emphasis text-headline-emphasis text-primary hover:text-secondary transition-colors group py-4"
+                                onClick={() => toggle(index)}
+                            >
+                                <span>{item.question}</span>
+                                <span className="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors">
+                                    {openIndex === index ? 'remove' : 'add'}
+                                </span>
+                            </button>
+                            {openIndex === index && (
+                                <div className="font-body-md text-on-surface-variant pt-2 pb-4">
+                                    {item.answer}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            );
+        };
+
+        // --- Screens ---
+
+        const Screen1 = () => {
+            const faqItems = [
+                { question: "What grades does Hancock Day School serve?", answer: "Hancock Day School is an independent PreK-8 school." },
+                { question: "What is class size like?", answer: "We maintain small class sizes to ensure personalized attention for every student." },
+                { question: "Where do Hancock graduates go to high school?", answer: "Our graduates are highly sought after and well-prepared for top local and regional high schools." }
+            ];
+
+            return (
+                <div className="flex flex-col min-h-screen">
+                    <Header />
+                    <main className="flex-grow">
+                        {/* HERO SECTION */}
+                        <section className="relative bg-primary text-on-primary min-h-[720px] md:min-h-[760px] lg:min-h-[800px] flex items-center overflow-hidden">
+                            <div className="absolute inset-0 z-0">
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center hero-parallax-bg opacity-45 mix-blend-multiply"
+                                    style={{
+                                        backgroundImage: "url('https://res.cloudinary.com/dn77vugbq/image/upload/q_auto/f_auto/v1781799413/home_bg_om0kxd.webp')"
+                                    }}
+                                ></div>
+                                <div className="absolute inset-0 bg-primary/55"></div>
+                            </div>
+
+                            <div className="relative z-10 w-full px-gutter max-w-container-max mx-auto py-[clamp(56px,6vw,96px)] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                                <div className="lg:col-span-7 space-y-6 text-left">
+                                    <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-primary">
+                                        A <span className="italic font-light text-secondary-fixed-dim">Strong</span> Foundation for What Comes Next
+                                    </h1>
+
+                                    <p className="font-body-lg text-body-lg text-on-primary/90 max-w-2xl">
+                                        At Hancock Day School, students are known personally, challenged academically, and guided to grow in confidence, character, and readiness for high school and beyond.
+                                    </p>
+
+                                    <div className="pt-4">
+                                        <a className="inline-flex bg-secondary-fixed text-on-secondary-fixed font-button text-button py-4 px-8 rounded hover:bg-secondary-fixed-dim transition-colors" href="#tour-form">
+                                            Schedule a Private Tour
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="lg:col-span-5 relative w-full max-w-xl mx-auto lg:max-w-none" id="tour-form">
+                                    <div className="absolute -inset-4 bg-secondary-fixed/20 blur-2xl rounded-xl z-0"></div>
+
+                                    <div className="relative z-10 bg-surface-container-lowest p-6 md:p-8 rounded-lg border border-outline-variant/30 shadow-lg">
+                                        <h2 className="font-headline-md text-headline-md text-primary mb-6 text-center">
+                                            Schedule a Private Tour
+                                        </h2>
+
+                                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                            <div>
+                                                <label className="block font-label-caps text-label-caps text-on-surface-variant mb-2">Parent Name</label>
+                                                <input className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Jane Doe" type="text"/>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="block font-label-caps text-label-caps text-on-surface-variant mb-2">Email</label>
+                                                    <input className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="jane@example.com" type="email"/>
+                                                </div>
+                                                <div>
+                                                    <label className="block font-label-caps text-label-caps text-on-surface-variant mb-2">Phone</label>
+                                                    <input className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="(555) 123-4567" type="tel"/>
+                                                </div>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="block font-label-caps text-label-caps text-on-surface-variant mb-2">Child's Current Grade</label>
+                                                    <select className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors appearance-none">
+                                                        <option>Select Grade...</option>
+                                                        <option>PreK</option>
+                                                        <option>Kindergarten</option>
+                                                        <option>1st Grade</option>
+                                                        <option>2nd Grade</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label className="block font-label-caps text-label-caps text-on-surface-variant mb-2">Grade of Interest</label>
+                                                    <select className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors appearance-none">
+                                                        <option>Select Grade...</option>
+                                                        <option>Kindergarten</option>
+                                                        <option>1st Grade</option>
+                                                        <option>Middle School</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label className="block font-label-caps text-label-caps text-on-surface-variant mb-2">Preferred Tour Date/Time</label>
+                                                <input className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="e.g. Next Tuesday morning" type="text"/>
+                                            </div>
+
+                                            <button className="w-full bg-secondary-fixed text-on-secondary-fixed font-button text-button py-4 rounded hover:bg-secondary-fixed-dim transition-colors mt-6" type="submit">
+                                                Submit Inquiry
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* PROOF BAR */}
+                        <section className="relative z-20 bg-background border-b border-outline-variant/30 py-10">
+                            <div className="px-gutter max-w-container-max mx-auto text-center md:text-left">
+                                <h3 className="font-headline-emphasis text-headline-emphasis text-primary mb-6 text-center">
+                                    A close-knit PreK-8 community where academics, character, <br />
+                                    and preparation grow together.
+                                </h3>
+                                <div className="flex flex-wrap justify-center gap-8 md:gap-16 font-body-md text-on-surface-variant">
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+                                        <span>Independent PreK-8 in Savannah</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+                                        <span>Small Class Sizes</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+                                        <span>Whole-Student Development</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary" data-icon="school">school</span>
+                                        <span>Strong High School Preparation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* WHY HANCOCK SECTION */}
+                        <section className="py-section-gap-mobile md:py-section-gap-desktop bg-background px-gutter">
+                            <div className="max-w-container-max mx-auto">
+                                <div className="text-center mb-16">
+                                    <h2 className="font-display-lg-mobile text-display-lg-mobile md:font-headline-md md:text-headline-md text-primary mb-4">Why Families Choose Hancock</h2>
+                                    <div className="w-16 h-1 bg-secondary-fixed mx-auto"></div>
+                                </div>
+                                <div className="mb-16">
+    <img
+        src="https://res.cloudinary.com/dn77vugbq/image/upload/q_auto/f_auto/v1781801360/hero_image_lujddx.webp"
+        alt="Hancock Day School students"
+        className="w-full max-w-5xl mx-auto h-[260px] md:h-[420px] lg:h-[520px] object-cover rounded-lg shadow-sm border border-outline-variant/20"
+    />
+</div>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    <div className="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-8 hover:bg-surface-container-low transition-colors duration-300 group">
+                                        <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                            <span className="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+                                        </div>
+                                        <h3 className="font-headline-emphasis text-headline-emphasis text-primary mb-4">Known <span className="italic font-light">Personally</span></h3>
+                                        <p className="font-body-md text-body-md text-on-surface-variant">
+                                            Small class sizes and close relationships ensure that every child is seen, understood, and supported as an individual.
+                                        </p>
+                                    </div>
+                                    <div className="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-8 hover:bg-surface-container-low transition-colors duration-300 group">
+                                        <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                            <span className="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                                        </div>
+                                        <h3 className="font-headline-emphasis text-headline-emphasis text-primary mb-4">Challenged <span className="italic font-light">Academically</span></h3>
+                                        <p className="font-body-md text-body-md text-on-surface-variant">
+                                            We build strong fundamentals in a structured PreK-8 environment, fostering critical thinking and a love for learning.
+                                        </p>
+                                    </div>
+                                    <div className="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-8 hover:bg-surface-container-low transition-colors duration-300 group">
+                                        <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                            <span className="material-symbols-outlined" data-icon="explore">explore</span>
+                                        </div>
+                                        <h3 className="font-headline-emphasis text-headline-emphasis text-primary mb-4">Prepared for <span className="italic font-light">What's Next</span></h3>
+                                        <p className="font-body-md text-body-md text-on-surface-variant">
+                                            Our students experience profound growth in confidence, leaving us fully prepared to excel in high school and beyond.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* CONTENT SECTIONS */}
+                        <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low overflow-hidden">
+                            <div className="max-w-container-max mx-auto px-gutter">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                                    <div className="order-2 lg:order-1 relative">
+                                        <div className="absolute -inset-4 bg-secondary-fixed/10 blur-2xl rounded-full z-0"></div>
+                                        <img className="relative z-10 w-full h-[500px] object-cover rounded-lg shadow-sm border border-outline-variant/20" alt="Classroom interaction" src="https://res.cloudinary.com/dn77vugbq/image/upload/q_auto/f_auto/v1781801704/content_image_vwywxi.webp"/>
+                                    </div>
+                                    <div className="order-1 lg:order-2 space-y-6">
+                                        <h2 className="font-display-lg-mobile text-display-lg-mobile md:font-headline-md md:text-headline-md text-primary">Where Students Are <span className="italic font-light text-secondary-fixed-dim">Truly</span> Known</h2>
+                                        <p className="font-body-lg text-body-lg text-on-surface-variant">
+                                            At Hancock Day School, education goes beyond grades and test scores. Every part of the experience is intentionally designed to develop the whole student. Our small class sizes allow teachers to form genuine connections with every child.
+                                        </p>
+                                        <p className="font-body-md text-body-md text-on-surface-variant">
+                                            We believe that when children feel secure and understood, they are more willing to take academic risks and explore their full potential.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* FAQ SECTION */}
+                        <section className="py-section-gap-mobile md:py-section-gap-desktop bg-background px-gutter">
+                            <div className="max-w-3xl mx-auto">
+                                <div className="text-center mb-12">
+                                    <span className="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Have Questions?</span>
+                                    <h2 className="font-display-lg-mobile text-display-lg-mobile md:font-headline-md md:text-headline-md text-primary mt-2">Frequently Asked Questions</h2>
+                                </div>
+                                <FaqAccordion items={faqItems} />
+                            </div>
+                        </section>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const Screen2MobileView = () => {
+             const faqItems = [
+                { question: "What grades do you offer?", answer: "Hancock Day School serves students from Pre-Kindergarten through 8th Grade, providing a continuous, cohesive educational journey during their most formative years." },
+                { question: "What is your average class size?", answer: "We intentionally maintain small class sizes to ensure personalized attention. Our average student-to-teacher ratio is low, allowing educators to truly know and guide each child." },
+                { question: "Do you offer financial aid?", answer: "Yes, we offer need-based financial aid to qualifying families. We believe a strong foundation should be accessible, and we encourage interested families to inquire during the admissions process." }
+            ];
+
+            return (
+                <div className="flex flex-col min-h-screen">
+                    <Header />
+                    <main className="flex-grow">
+                        {/* Hero Section */}
+                        <section className="relative w-full min-h-[795px] flex flex-col justify-start pt-12 px-5">
+                            <div className="absolute inset-0 z-0">
+                                <div className="bg-cover bg-center w-full h-full opacity-30" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvBCI_XG8vEgv06BE7FtBk8BfEeyddAgMMCW4AboeSl3T_X_EFDbfQ6ca-2Npc_BTeACNGcIuK4iioR37hxqfGGAkIe9hbOHuU3GKPEURlxATscvl99-ybE7uYLUR99Dq0ThrROpOZiUpBH1aOJ_8vvFkZds0tNJbldPC-cmYUYQBixPpgFdZx_QuIVnMCGyVSVNYawE4UXiU9aBal4q5gmv83_z2kSWRkB_821xl6L5e88UV7YuCMxqxuWY6W52pDwXV6NtxyBA')"}}></div>
+                                <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background/90"></div>
+                            </div>
+                            <div className="relative z-10 w-full max-w-lg mx-auto flex flex-col gap-6">
+                                <h1 className="font-display-lg-mobile text-display-lg-mobile text-primary leading-tight">
+                                    A Strong Foundation for What Comes Next
+                                </h1>
+                                <p className="font-body-lg text-body-lg text-on-surface-variant">
+                                    Discover a nurturing academic environment where your child is known, challenged, and prepared for future success in Savannah.
+                                </p>
+                                <div className="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/30 mt-6 shadow-[0_8px_30px_rgb(19,80,48,0.05)]">
+                                    <h3 className="font-headline-md text-2xl text-primary mb-4 text-center">Inquire Now</h3>
+                                    <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+                                        <div>
+                                            <label className="font-label-caps text-label-caps text-primary block mb-1">Parent Name</label>
+                                            <input className="w-full bg-surface-container-lowest border border-outline-variant rounded focus:border-hancock-green focus:ring-1 focus:ring-hancock-green px-3 py-2 text-on-surface" placeholder="First Last" type="text"/>
+                                        </div>
+                                        <div>
+                                            <label className="font-label-caps text-label-caps text-primary block mb-1">Email Address</label>
+                                            <input className="w-full bg-surface-container-lowest border border-outline-variant rounded focus:border-hancock-green focus:ring-1 focus:ring-hancock-green px-3 py-2 text-on-surface" placeholder="you@example.com" type="email"/>
+                                        </div>
+                                        <div>
+                                            <label className="font-label-caps text-label-caps text-primary block mb-1">Child's Grade</label>
+                                            <select className="w-full bg-surface-container-lowest border border-outline-variant rounded focus:border-hancock-green focus:ring-1 focus:ring-hancock-green px-3 py-2 text-on-surface">
+                                                <option>Pre-K</option>
+                                                <option>Kindergarten</option>
+                                                <option>Grades 1-4</option>
+                                                <option>Grades 5-8</option>
+                                            </select>
+                                        </div>
+                                        <button className="mt-2 w-full bg-hancock-gold text-white font-button text-button py-3 rounded text-center transition-opacity hover:opacity-90" type="submit">
+                                            Request Information
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+
+                         {/* Trust Bar */}
+                        <section className="w-full bg-surface-container-low py-8 border-y border-outline-variant/30">
+                            <div className="px-5 grid grid-cols-2 gap-y-6 gap-x-4 max-w-md mx-auto">
+                                <div className="flex flex-col items-center text-center gap-2">
+                                    <span className="material-symbols-outlined text-hancock-green text-3xl" data-icon="school">school</span>
+                                    <span className="font-label-caps text-label-caps text-on-surface">Independent<br/>PreK-8</span>
+                                </div>
+                                <div className="flex flex-col items-center text-center gap-2">
+                                    <span className="material-symbols-outlined text-hancock-green text-3xl" data-icon="groups">groups</span>
+                                    <span className="font-label-caps text-label-caps text-on-surface">Small<br/>Class Sizes</span>
+                                </div>
+                                <div className="flex flex-col items-center text-center gap-2">
+                                    <span className="material-symbols-outlined text-hancock-green text-3xl" data-icon="verified">verified</span>
+                                    <span className="font-label-caps text-label-caps text-on-surface">Accredited<br/>Excellence</span>
+                                </div>
+                                <div className="flex flex-col items-center text-center gap-2">
+                                    <span className="material-symbols-outlined text-hancock-green text-3xl" data-icon="auto_stories">auto_stories</span>
+                                    <span className="font-label-caps text-label-caps text-on-surface">Whole Child<br/>Approach</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* FAQ Accordion */}
+                        <section className="py-section-gap-mobile px-5 bg-background">
+                            <h2 className="font-headline-emphasis text-headline-emphasis text-primary text-center mb-8">Frequently Asked Questions</h2>
+                            <div className="max-w-md mx-auto border-t border-outline-variant/30">
+                                <FaqAccordion items={faqItems} />
+                            </div>
+                        </section>
+
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+
+        const App = () => {
+            return (
+                <MemoryRouter>
+                    <Routes>
+                        <Route path="/" element={<Screen1 />} />
+                        <Route path="/mobile-view" element={<Screen2MobileView />} />
+                    </Routes>
+                </MemoryRouter>
+            );
+        };
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
